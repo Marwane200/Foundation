@@ -1,3 +1,16 @@
+'''
+LINKED LIST
+
+Linked List is another foundational data structure that is good for creating dynamic lists.
+This file is broken up into 2 parts:
+ListNode:
+    -initialize list and list nodes
+    -manipulate and print node
+
+List Algorithms:
+    -Algorithms to affect the linked list 
+'''
+
 class ListNode:
     def __init__(self, val=0 , next=None):
         self.val = val
@@ -41,10 +54,13 @@ class ListAlgos():
 
 
 #Test cases for Linked list data structures
-s = ListAlgos()
+algorithms = ListAlgos()
 test=[1,2,5,6,7]
-list1 = s.arraytolist(test)
+
+#Create a linked list from an array
+list1 = algorithms.arraytolist(test)
 list1.printList()
-reverse = s.reverseList(list1)
-print('reverse!')
+
+#reverse the linked list
+reverse = algorithms.reverseList(list1)
 reverse.printList()

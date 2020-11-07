@@ -1,3 +1,15 @@
+'''
+RECURSION
+Recusive algorithms are partical set of algorithms in which a function calls upon its self.
+This class contains many classic examples of recursion
+
+-Recursive-
+    fibbonacce: given a number find the fibonnace number
+    dynamicFib: finds the fibonnace number using dynamic programming and memoization
+    bottomupFib: finds the fibonnace number using the bottoms up approach
+
+    climbingStairs: given a certain integers of steps, how many possible ways is it to get to the top by taking only 1 or 2 steps
+'''
 class Recusive:
 
     # Using regular recursion
@@ -13,13 +25,13 @@ class Recusive:
     # finds Fibbonnace
     def dynamicFib(self, num):
         #Creates memo and initalizes the base case
-        memo = [None] * num
+        memo = [None] * (num+1)
         memo[1]=1
         memo[0]=1
 
         return self.memoFib(num,memo)
 
-    #Calls in the memoization
+    #Calls in the memoization for dynamicFib
     def memoFib(self, num, memo):
         if memo[num]:
             return memo[num]
@@ -71,17 +83,20 @@ class Recusive:
         memo[num] = step1 + step2
         return memo[num]
 
-        
 
-
-
-
-
-
-
+#Test Cases
 test = Recusive()
-res1 = test.climbStairs(28)
-res = test.climbStairs2(28)
-print(res1)
-print(res)
+
+fib1 = test.fibbonacce(10)
+fib2 = test.dynamicFib(23)
+fib3 = test.bottomUpFib(13)
+print(fib1)
+print(fib2)
+print(fib3)
+
+#Climbing Stairs
+climb1 = test.climbStairs(28)
+climb2 = test.climbStairs2(28)
+print(climb1)
+print(climb2)
         
