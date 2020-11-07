@@ -1,3 +1,9 @@
+'''
+GREEDY ALGORITHMS
+
+The greedy method is a very efficient algorithm that is used for optimization problems
+This class contains unique algorithms I have come across that fit this solution
+'''
 class Greedy:
 
     #Given an american coin set find the minum amount of coins
@@ -14,6 +20,7 @@ class Greedy:
         return count
     
     #Leet Code 1403: Minimum Sub Sequence
+    #https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order/
     def minSubsequence(self, nums: list[int]) -> list[int]:
         nums.sort(reverse=True)
         total = sum(nums)
@@ -27,7 +34,9 @@ class Greedy:
 
         return subArray
 
+
 testArray = [4,4,7,6,7]
+
 test = Greedy()
 print(test.minCoins(92))
 print(test.minSubsequence(testArray))

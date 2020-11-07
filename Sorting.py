@@ -1,3 +1,12 @@
+'''
+SORTING ALGORITHMS
+
+    -Sorting Algorithms are a common class of problems with many implementation
+    -This class highlights some of the foundational implmentations of sorting
+
+    -SORT FUNCTIONS-
+        mergeSort: uses divide and conqure to to sort elements in n log(n) time
+'''
 class Sort:
     def mergeSort(self, array):
 
