@@ -28,7 +28,9 @@ This repository covers how some of the important algorithms and data structures 
    2. Climbing Stairs 
 
 **Sorting** - Sorting Algorithms
-   1. Merge Sort
+   1. Selection Sort
+   2. Merge Sort
+   3. Heap Sort
 
 **Stacks and Queues** - Different Stacks and Queues Implementation
    1. Min Stack
