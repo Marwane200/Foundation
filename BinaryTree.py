@@ -26,10 +26,26 @@ class TreeAlgos:
 
     '''
     Tree Algorithms: Different Tree Algorithm implmentation
+        Treeify: Turns list into a binary
         depthTraversal: implements depth first search
         breadthTraversal: implements breadth first search search
+        maxDepth: Find the tree depth
         invertTree: reverse the order of the Tree
     '''
+
+    def Treeify(self, array):
+        if not array: return
+        length = len(array)
+        def helper(index):
+            node = TreeNode(array[index])
+            Li = index*2 + 1
+            Ri = index*2 + 2
+            if Li < length and array[Li]: node.left = helper(Li)
+            if Ri < length and array[Ri]: node.right = helper(Ri)
+            
+            return node
+        
+        return helper(0)
 
     def depthTraversal(self, node):
         if node.left:
@@ -51,6 +67,13 @@ class TreeAlgos:
             if currNode.right:
                 q.append(currNode.right)
     
+    def maxDepth(self, node):
+        if not node: return 0
+        L = 1 + self.maxDepth(node.left)
+        R = 1 + self.maxDepth(node.right)
+
+        return max(L,R)
+
     def invertTree(self, node):
         q = [node]
         root = node
@@ -61,19 +84,14 @@ class TreeAlgos:
             if currNode.left: q.append(currNode.left)
             if currNode.right: q.append(currNode.right)
     
-    
 
+a = TreeAlgos()
 #Test Binary Tree
-root = TreeNode(7)
-root.insert(TreeNode(3))
-root.insert(TreeNode(9))
-root.insert(TreeNode(4))
-root.insert(TreeNode(12))
-root.insert(TreeNode(10))
-
+test = [3,9,20,None,None,15,7]
+root = a.Treeify(test)
 
 #Test Algorithms
-a = TreeAlgos()
+print(a.maxDepth(root))
 print("Depth Traversal")
 a.depthTraversal(root)
 print("Breadth Traversal")
