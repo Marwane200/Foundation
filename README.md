@@ -11,6 +11,7 @@ This repository covers how some of the important algorithms and data structures 
 **Binary Trees**
    1. Binary Tree Insertion and Creation
    2. Depth First Search and Breadth First Search
+   3. Invert a Binary Tree
  
 **Greedy Algorithms** - Algorithms for Optimization Problems
    1. Give Minimum Change Problem   

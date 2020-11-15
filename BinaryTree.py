@@ -23,11 +23,14 @@ class TreeNode:
             else: baseNode.right.insert(node)
 
 class TreeAlgos:
+
     '''
     Tree Algorithms: Different Tree Algorithm implmentation
         depthTraversal: implements depth first search
         breadthTraversal: implements breadth first search search
+        invertTree: reverse the order of the Tree
     '''
+
     def depthTraversal(self, node):
         if node.left:
             self.depthTraversal(node.left)
@@ -47,7 +50,18 @@ class TreeAlgos:
                 q.append(currNode.left)
             if currNode.right:
                 q.append(currNode.right)
+    
+    def invertTree(self, node):
+        q = [node]
+        root = node
 
+        while q:
+            currNode = q.pop(0)
+            currNode.left, currNode.right = currNode.right, currNode.left
+            if currNode.left: q.append(currNode.left)
+            if currNode.right: q.append(currNode.right)
+    
+    
 
 #Test Binary Tree
 root = TreeNode(7)
@@ -64,3 +78,4 @@ print("Depth Traversal")
 a.depthTraversal(root)
 print("Breadth Traversal")
 a.breadthTraversal(root)
+a.invertTree(root)

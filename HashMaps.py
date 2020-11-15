@@ -11,15 +11,11 @@ class HashMaps:
     #Given an array of integers and an integer, return indices of the two numbers such that they add up to target.
     def twoSum(self, numsList, target):
 
-        HashMap = {}
-
-        for i in numsList:
-            HashMap[i] = i
+        hashMap = {i: i for i in numsList}
         
         for n in numsList:
             lookup = target - n
-            if HashMap.get(lookup):
-                return [n,lookup]
+            if n in hashMap: return [n,lookup]
 
         return None
 
