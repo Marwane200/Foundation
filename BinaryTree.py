@@ -3,7 +3,7 @@ BINARY TREE
 This file implments many binary tree algorithms
 -CLASSES-
     TreeNode: Defines how to create and manipulate the tree
-    TreeAlgos: Example Algorithms that can be used on a binary tree 
+    TreeAlgos: Example Algorithms that can be used on a binary tree
 '''
 class TreeNode:
     #Constructor: tree node that can also point to its left and right components
@@ -38,11 +38,10 @@ class TreeAlgos:
         length = len(array)
         def helper(index):
             node = TreeNode(array[index])
-            Li = index*2 + 1
-            Ri = index*2 + 2
+            Li, Ri = index*2 + 1, index*2 + 2
             if Li < length and array[Li]: node.left = helper(Li)
             if Ri < length and array[Ri]: node.right = helper(Ri)
-            
+
             return node
         
         return helper(0)
@@ -84,6 +83,30 @@ class TreeAlgos:
             if currNode.left: q.append(currNode.left)
             if currNode.right: q.append(currNode.right)
     
+    # Converts a tree into a linked list in place
+    def Listify(self, root):
+        if not root: return
+        spare = []
+        
+        def helper(node):
+            if node.left and node.right:
+                spare.insert(0,node.right)
+                node.right = node.left
+                node.left = None
+                
+            elif node.left:
+                node.right, node.left = node.left, node.right
+            
+            elif not node.right and spare:
+                node.right = spare.pop(0)
+    
+            if node.right: helper(node.right)
+            return
+        
+        helper(root)
+        
+        return root
+
 
 a = TreeAlgos()
 #Test Binary Tree
