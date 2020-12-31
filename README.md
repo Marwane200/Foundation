@@ -38,23 +38,11 @@ This repository covers how some of the important algorithms and data structures 
 
 **Stacks and Queues** - Different Stacks and Queues Implementation
    1. Min Stack
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
+
 
 **Trie** - Trie Data Structure
    1. Insert Word
    2. Print Trie
-   
->>>>>>> 2b148faf62cc0c550de114adc250754b88ba42b3
-  
-=======
-
-**Trie** - Trie Data Structure
-   1. Insert Word
-   2. Print Trie
-   3. Print Prefix
->>>>>>> Stashed changes
 
 This repository is just the start of my journey into this fascinating topic. 
 The feild of data structures and algorithms is vast and I am eager to add more intresting solutions as I come across them.
