@@ -1,4 +1,4 @@
-
+# examples of useful things in the python language
 #list comprehension
 squares = []
 for x in range(10):
@@ -17,6 +17,15 @@ for x in [1,2,3]:
 
 #list functions
 listy = [1,2,4]
+
+for i,num in enumerate(listy):
+    print(i,num)
+
+def myFunction(x):
+    return x < 3
+filterList = filter(myFunction,listy)
+for x in filterList:
+    print(x)
 
 print('SUM: ',sum(listy))
 
@@ -58,8 +67,10 @@ print(adict.get(4)) # <-- returns null
 
 
 #strings 
-word = '   Hello!!   '
-word.find('z') # returns -1
+word = 'Hello!!'
+w = word[3:]
+i = w[3:].find('l') # returns -1
+print('index: ',i)
 # word.index('x') <-- Value Error!
 word.isnumeric()
 word.isalpha()
@@ -81,6 +92,14 @@ pairs.sort(key=lambda x: -x[0]) # sort by reverse order of first item
 pairs.sort(key=lambda x: x[1], reverse=True) # sort by reverse order of second item
 
 
+#Ques
+from collections import deque
+q = deque()
+q.append('a')
+q.append('b')
+q.append('c')
+letter = q.popleft()
+
 
 # Classes and Objects 
 class Node:
@@ -91,7 +110,3 @@ class Node:
 node1 = Node(1)
 node2 = Node(2)
 node1.next = node2
-
-
-num = None
-if not num: print('NOTTTYY')
