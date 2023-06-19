@@ -17,6 +17,8 @@ for x in [1,2,3]:
 
 #list functions
 listy = [1,2,4]
+y = listy # shallow copy! y will pick up changes
+y = listy[:] # deep copy - y will remain the same
 
 for i,num in enumerate(listy):
     print(i,num)
@@ -99,6 +101,7 @@ q.append('a')
 q.append('b')
 q.append('c')
 letter = q.popleft()
+q.appendleft('a')
 
 
 # Classes and Objects 
@@ -110,3 +113,13 @@ class Node:
 node1 = Node(1)
 node2 = Node(2)
 node1.next = node2
+
+# HEAPS
+# Heaps looks at first entry ex: (3,'A') - heapsorts on 3
+# min heap only! for max heap multiply by -1
+import heapq
+sample = [2,6,4,1]
+heapq.heapify(sample)
+heapq.heappush(x,3)
+heapq.heapppop(x)
+heapq.heapreplace(x,2)
