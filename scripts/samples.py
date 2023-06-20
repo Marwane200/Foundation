@@ -121,5 +121,5 @@ import heapq
 sample = [2,6,4,1]
 heapq.heapify(sample)
 heapq.heappush(x,3)
-heapq.heapppop(x)
+heapq.heappop(x)
 heapq.heapreplace(x,2)

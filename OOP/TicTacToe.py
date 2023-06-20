@@ -30,24 +30,17 @@ class Game:
         print(winner, " Wins!")
         self.board.printBoard()
         
-
     def playTurn(self,player,token):
         print(player,'\'s Turn')
         self.board.printBoard()
-        row = int(input(" Select a row: "))
-        col = int(input(" Select a col: "))
         try:
+            row = int(input(" Select a row: "))
+            col = int(input(" Select a col: "))
             self.board.placeToken(row,col,token)
         except Exception as e :
             print('Error: ', e)
             print('Please Try Again...')
             self.playTurn(player,token)
-
-
-
-
-
-
 
 class Board:
     def __init__(self):
