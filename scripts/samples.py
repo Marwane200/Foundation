@@ -123,3 +123,14 @@ heapq.heapify(sample)
 heapq.heappush(x,3)
 heapq.heappop(x)
 heapq.heapreplace(x,2)
+
+# Abstract Classes
+from abc import ABC, abstractmethod
+class Transaction(ABC):
+    def __init__(self,id,tellerid):
+        self._id = id
+        self._tellerId = tellerid
+
+    @abstractmethod
+    def get_transaction_description(self):
+        pass
