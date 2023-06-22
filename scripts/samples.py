@@ -120,9 +120,9 @@ node1.next = node2
 import heapq
 sample = [2,6,4,1]
 heapq.heapify(sample)
-heapq.heappush(x,3)
-heapq.heappop(x)
-heapq.heapreplace(x,2)
+heapq.heappush(sample,3)
+heapq.heappop(sample)
+heapq.heapreplace(sample,2)
 
 # Abstract Classes
 from abc import ABC, abstractmethod
@@ -134,3 +134,13 @@ class Transaction(ABC):
     @abstractmethod
     def get_transaction_description(self):
         pass
+
+lines = ['this is a written line']
+with open('sample.txt','w') as f:
+    for line in lines:
+        f.write(line)
+        f.write('\n')
+
+with open('number.txt') as f:
+    for line in f.readlines():
+        print(line)
